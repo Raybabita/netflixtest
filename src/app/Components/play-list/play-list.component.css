@@ -1,0 +1,122 @@
+.playListContainer {
+    background-color: #1d1d1d;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: x-large;
+    color: white;
+}
+
+.clearAllContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+img {
+    border-radius: 5px;
+    width: 200px;
+    height: 160px;
+
+}
+
+.bgContainer {
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clearBtn {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: red;
+}
+
+
+
+.emptyPlaylistContainer {
+    padding-top: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emptyImage {
+    height: 200px;
+}
+
+.text {
+    margin: 20px;
+    font-family: "Roboto";
+    font-size: 16px;
+    color: rgb(227, 126, 126);
+}
+
+.backToHomeBtn {
+    margin-top: 10px;
+    height: 40px;
+    min-width: 200px;
+    background-color: red;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Roboto";
+    border: none;
+    border-radius: 5px;
+}
+
+.backToHomeBtn:hover {
+    opacity: 0.5;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    flex-direction: column;
+}
+
+h1,
+
+h5,
+p {
+    color: #fff;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.card {
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    margin: 10px;
+    padding: 40px 20px;
+    border-radius: 5px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+
+    cursor: pointer;
+}
+
+.btnContainer {
+    display: flex;
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

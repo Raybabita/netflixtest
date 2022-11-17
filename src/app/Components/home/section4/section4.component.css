@@ -1,0 +1,82 @@
+.section4 {
+    border-top: 10px rgb(69, 69, 69) solid;
+    padding: 50px;
+}
+
+.card4 {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 60% 50%;
+    text-align: left;
+    align-items: center;
+    padding: 25px 45px 50px;
+}
+
+
+
+.card4 video {
+    position: relative;
+    height: 30%;
+    margin-bottom: 150px;
+    margin-left: 170px;
+    grid-column: 2/2;
+    grid-row: 1/2;
+
+}
+
+.card4 img {
+    width: 100%;
+    grid-column: 2/2;
+    grid-row: 1/2;
+}
+
+.section4-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tv-heading {
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.tv-sub-heading {
+    padding-left: 0px;
+    margin-left: 0px;
+    max-width: 420px;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .card4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .tv-heading {
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .tv-sub-heading {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .card4 img {
+        height: 200px;
+    }
+
+    .card4 video {
+        display: none;
+    }
+}

@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #e50914;
+    --dark-color: #141414;
+    --light-color: #f4f4f4;
+}
+
+.container {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000000;
+    color: #99999999;
+}

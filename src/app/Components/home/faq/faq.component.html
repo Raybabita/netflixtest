@@ -1,0 +1,116 @@
+<section class="sectionfaq">
+    <div class="faq">
+        <h1 class="heading">Frequently Asked Questions</h1>
+        <ul class="questions">
+            <li>
+                <div class="listItemContainer">
+                    <h1>What is Netflix?</h1><button class="faqBtn" (click)="onFaqDisplay1()">+</button>
+                </div>
+                <div class="faqAnswere" *ngIf="isShow1">
+                    <hr class="horizontalLink">
+                    <h1 class="answer">Netflix is a streaming service that offers a wide variety of award-winning TV
+                        shows, movies,
+                        anime,
+                        documentaries and more – on thousands of internet-connected devices.
+                        <br />
+                        <br />
+
+                        You can watch as much as you want, whenever you want, without a single ad – all for one low
+                        monthly
+                        price. There's always something new to discover, and new TV shows and movies are added every
+                        week!
+                    </h1>
+                </div>
+            </li>
+            <li>
+                <div class="listItemContainer">
+                    <h1>How much does Netflix cost?
+                    </h1><button class="faqBtn" (click)="onFaqDisplay2()">+</button>
+                </div>
+                <div class="faqAnswere" *ngIf="isShow2">
+                    <hr class="horizontalLink">
+                    <h1 class="answer">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device,
+                        all for one
+                        fixed
+                        monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.
+                    </h1>
+                </div>
+
+            </li>
+            <li>
+                <div class="listItemContainer">
+                    <h1>Where can I watch?
+                    </h1><button class="faqBtn" (click)="onFaqDisplay3()">+</button>
+                </div>
+
+                <div class="faqAnswere" *ngIf="isShow3">
+                    <hr class="horizontalLink">
+                    <h1 class="answer">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on
+                        the web
+                        at netflix.com from your personal computer or on any internet-connected device that offers
+                        the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                        consoles.
+                    </h1>
+                </div>
+            </li>
+            <li>
+                <div class="listItemContainer">
+                    <h1>How do I cancel?
+                    </h1><button class="faqBtn" (click)="onFaqDisplay4()">+</button>
+                </div>
+
+                <div class="faqAnswere" *ngIf="isShow4">
+                    <hr class="horizontalLink">
+                    <h1 class="answer"> Netflix is flexible. There are no annoying contracts and no commitments. You
+                        can easily cancel your
+                        account online in two clicks. There are no cancellation fees – start or stop your account
+                        anytime.
+                    </h1>
+                </div>
+            </li>
+            <li>
+                <div class="listItemContainer">
+                    <h1>What can I watch on Netflix? </h1>
+                    <button class="faqBtn" (click)="onFaqDisplay5()">+</button>
+                </div>
+                <div class="faqAnswer" *ngIf="isShow5">
+                    <hr class="horizontalLink">
+                    <h1 class="answer">Netflix has an extensive library of feature films, documentaries,
+                        TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime
+                        you
+                        want.
+                    </h1>
+                </div>
+            </li>
+            <li>
+                <div class="listItemContainer">
+                    <h1>Is Netflix good for kids?
+                    </h1><button class="faqBtn" (click)="onFaqDisplay6()">+</button>
+                </div>
+
+                <div class="faqAnswere" *ngIf="isShow6">
+                    <hr class="horizontalLink">
+                    <h1 class="answer">
+                        The Netflix Kids experience is included in your membership to give parents control while kids
+                        enjoy
+                        family-friendly TV shows and films in their own space.
+                        <br />
+                        <br />
+                        Kids profiles come with PIN-protected parental controls that let you restrict the maturity
+                        rating of
+                        content kids can watch and block specific titles you don’t want kids to see.
+                    </h1>
+
+                </div>
+            </li>
+        </ul>
+        <p class="desc">Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="getStartedSection">
+            <mat-form-field appearance="outline" class="inputText">
+                <mat-label>Email address</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <button class="btn">Get Started <mat-icon>keyboard_arrow_right</mat-icon></button>
+        </div>
+    </div>
+</section>

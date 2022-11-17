@@ -1,0 +1,71 @@
+.section5 {
+    border-top: 10px rgb(69, 69, 69) solid;
+    padding: 50px;
+}
+
+.card5 {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 60% 50%;
+    text-align: left;
+    align-items: center;
+    padding: 25px 45px 50px;
+}
+
+
+
+.section5-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tv-heading {
+    align-self: flex-start;
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    max-width: 580px;
+    line-height: 1.2;
+}
+
+img {
+    height: 400px;
+}
+
+.tv-sub-heading {
+    align-self: flex-start;
+    max-width: 380px;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .card5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .tv-heading {
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .tv-sub-heading {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .card5 img {
+        height: 200px;
+    }
+
+    .card5 video {
+        display: none;
+    }
+}

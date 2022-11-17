@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="playListContainer">
+    <div class="bgContainer" *ngIf="movie.length!=0">
+        <h1>My Favourite Movies</h1>
+        <div class="clearAllContainer">
+            <button class="clearBtn" (click)="onEmptyPlayList()">Clear All</button>
+        </div>
+        <div class="container">
+            <div class=" list">
+                <div class="card" *ngFor="let item of movie; let i =index">
+                    <div>
+                        <img src="{{watchlistImg}}" />
+                        <div class="desc">
+                            <h5>{{item.title}}</h5>
+                            <p> <span class="text-warning">Rating: </span>{{item.vote_average}}</p>
+                            <p>Language: <span class="p-1"
+                                    style="background-color:gray"><b>{{item.original_language}}</b></span>
+                            </p>
+                            <div class="btnContainer">
+                                <button class="clearBtn" (click)="removeItem(item)">Remove</button>
+                                <button class="clearBtn" routerLink="/video">Play</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="emptyPlaylistContainer" *ngIf="movie.length==0">
+        <img class="emptyImage"
+            src="https://res.cloudinary.com/dahw90b2z/image/upload/v1649202458/erroring_1_wmrpgf.png" />
+        <h1 class="text">Oops...Empty PlayList</h1>
+        <button class="backToHomeBtn" routerLink="/mainpage">Back to Home</button>
+    </div>
+</div>

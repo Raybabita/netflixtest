@@ -1,0 +1,50 @@
+<div class="headerMain" id="stickyHeader" [class.sticky]="sticky" #stickyHeader>
+    <div class="hederLeft">
+        <a routerLink="/">
+            <img src="https://res.cloudinary.com/dahw90b2z/image/upload/v1667982530/logo_cfqupd.png" />
+        </a>
+        <ul class="listItemLeft">
+            <li><a class="activeClass" (click)="onHome()">Home</a></li>
+            <li><a (click)="onTvshow()">TV Shows</a></li>
+            <li><a>Movies</a></li>
+            <li><a>Latest</a></li>
+            <li><a (click)="onMyList()">My WatchList <span class="totalItem">{{totalItem}}</span></a></li>
+        </ul>
+    </div>
+    <div class="headerRight">
+        <ul class="listItemRight">
+            <li>
+                <a (click)="onSearch()">
+                    <mat-icon>search</mat-icon>
+                </a>
+            </li>
+            <li><a (click)="logout()">LOGOUT</a></li>
+            <li><a href="#">
+                    <mat-icon>card_giftcard</mat-icon>
+                </a></li>
+            <li><a href="#">
+                    <mat-icon>notifications</mat-icon>
+                </a></li>
+            <li>
+                <img class="avatar-img"
+                    src="https://res.cloudinary.com/dahw90b2z/image/upload/v1662123458/photo-1483985988355-763728e1935b_q9k0ne.avif" />
+            </li>
+        </ul>
+    </div>
+    <!-- mobile hambergermenu -->
+    <div class="mobileView">
+        <button mat-button class="menu-button" (click)="onMenuDisplay()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <nav *ngIf="isshowMenu">
+            <ul class="mobileMenu">
+                <li class="nav-link-s1">Profile</li>
+                <li class="nav-link-s1">Setttings</li>
+                <li class="nav-link-s1">Gitf</li>
+                <li class="nav-link-s1">Notifications</li>
+                <li class="nav-link-s1" (click)="logout()">Logout</li>
+            </ul>
+        </nav>
+    </div>
+</div>

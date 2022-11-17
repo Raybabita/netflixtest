@@ -1,0 +1,185 @@
+.showcase {
+    height: 100vh;
+    width: 100vw;
+    box-shadow: 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+    position: relative;
+    background-image: url('https://res.cloudinary.com/dahw90b2z/image/upload/v1667979965/mainpage_netflix_bdlh8x.jpg');
+}
+
+.showcase::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+
+
+
+.showcase-top {
+    position: relative;
+    z-index: 2;
+    height: 90px;
+}
+
+img {
+    width: 100%;
+}
+
+.showcase-top img {
+    width: 140px;
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translate(40%, -50%);
+}
+
+.section1HeaderBtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+    transform: translate(-69%, -50%);
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #e50914;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.45);
+}
+
+.showcase-content {
+    position: relative;
+    margin: 0 26%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 9rem;
+}
+
+.section1Header1 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0 30px;
+    font-size: 64px;
+    line-height: 74.5px;
+    max-width: 800px;
+
+}
+
+.section1Header2 {
+    color: #fff;
+    margin: 16px 0;
+    font-size: 25px;
+}
+
+.section1Header3 {
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.getStartedSection {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputText {
+    background-color: #fff;
+    left: 0;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 70px;
+    outline: none;
+    font-size: 1rem;
+
+}
+
+.btn {
+    height: 70px;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #e50914;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.45);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .showcase {
+        height: 500px;
+        width: flex;
+    }
+
+    .showcase-top img {
+        width: 90px;
+    }
+
+    .section1Header1 {
+        font-size: 15px;
+        line-height: 1;
+        min-width: 400px;
+
+    }
+
+    .showcase-content {
+        margin-top: 0 10%;
+    }
+
+    .section1Header2 {
+        font-size: 18px;
+    }
+
+    .section1Header3 {
+        font-size: 15px;
+    }
+
+    .inputText {
+        font-size: 10px;
+        height: 40px;
+        width: 200px;
+
+    }
+
+    .btn {
+        font-size: 12px;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        max-width: 140px;
+    }
+
+
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: row;
+    }
+
+    mat-icon {
+        display: none;
+    }
+
+}

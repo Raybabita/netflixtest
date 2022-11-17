@@ -1,0 +1,156 @@
+.sectionfaq {
+    border-top: 10px rgb(69, 69, 69) solid;
+    padding: 50px;
+}
+
+.faq {
+    text-align: center;
+}
+
+.heading {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.questions {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    align-items: center;
+}
+
+.questions li {
+    padding: 20px 30px;
+    margin: 5px;
+    font-size: 1.6rem;
+    background-color: #303030;
+    color: white;
+    text-align: left;
+    width: 50%;
+}
+
+.desc {
+    padding-top: 60px;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 200;
+}
+
+.getStartedSection {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputText {
+    background-color: #fff;
+    left: 0;
+    margin-bottom: 10px;
+    width: 500px;
+
+    height: 70px;
+    outline: none;
+    font-size: 1rem;
+
+}
+
+.btn {
+    height: 70px;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #e50914;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.45);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 10px;
+    }
+
+    .questions li {
+        min-width: 300px;
+        font-size: 15px;
+    }
+
+
+    .inputText {
+        font-size: 10px;
+        height: 40px;
+        width: 200px;
+
+    }
+
+    .btn {
+        font-size: 12px;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        max-width: 140px;
+    }
+
+
+    .faqAnswere {
+        padding: 5px;
+    }
+
+    .answer {
+        padding-top: 10px;
+        font-size: 14px;
+    }
+
+
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: row;
+    }
+
+    mat-icon {
+        display: none;
+    }
+}
+
+.listItemContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.horizontalLink {
+    color: gray;
+    border: 1px solid grey;
+}
+
+.faqBtn {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-size: 40px;
+}
+
+.faqAnswere {
+    padding: 20px;
+}
+
+.answer {
+    padding-top: 20px;
+}

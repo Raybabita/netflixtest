@@ -1,0 +1,163 @@
+.avatar-img {
+    height: 40px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d1d1d;
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.movie-title {
+    font-size: 90px;
+    color: #696969;
+}
+
+.headerBanner {
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-title {
+    font-size: 6rem;
+    margin-left: 3rem;
+    margin-bottom: 6rem;
+    margin-top: 8rem;
+    color: lightgray;
+}
+
+.headerButton {
+    display: flex;
+}
+
+
+
+.headerButton button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px 40px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.headerButton button mat-icon {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.playButton span {
+    font-weight: 600;
+
+    font-size: 24px;
+}
+
+.playButton mat-icon {
+    transform: scale(2.5);
+}
+
+.moreButton {
+    background-color: rgba(112, 113, 109, 0.7);
+    cursor: pointer;
+
+}
+
+.moreButton mat-icon {
+    color: lightgray;
+    transform: scale(2.5);
+}
+
+.moreButton span {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+
+/* banner ends */
+
+
+.body {
+    overflow-y: hidden;
+    padding: 20px;
+    overflow-x: scroll;
+    margin-top: 500px;
+    position: relative;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .headerButton button {
+        height: 40px;
+    }
+
+
+
+    .movie-title {
+        font-size: 2rem;
+
+    }
+
+    .headerButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .playButton {
+        margin: 10px;
+
+    }
+
+    .playButton span {
+        font-size: 15px;
+    }
+
+    .moreButton span {
+        font-size: 15px;
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .mobileView {
+        display: none;
+    }
+
+
+}
+
+.activeClass {
+    color: white;
+}

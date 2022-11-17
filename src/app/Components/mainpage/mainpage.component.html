@@ -1,0 +1,33 @@
+<div class="main-container">
+    <div class="header">
+        <!-- Banner Area -->
+        <div class="headerBanner" [ngStyle]="{
+            'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)),url('+headerBGUrl+')'
+            }">
+            <h2 class="movie-title">{{title}}</h2>
+            <div class="headerButton">
+                <button routerLink="/video" class="playButton">
+                    <mat-icon>arrow_right</mat-icon>
+                    <span>Play</span>
+                </button>
+                <button class="moreButton">
+                    <mat-icon>info</mat-icon>
+                    <span>More info</span>
+                </button>
+            </div>
+        </div>
+        <!-- Banner ends -->
+        <!-- Main area start -->
+
+        <app-header></app-header>
+
+        <!-- Header Main ends here -->
+        <div class="body">
+            <app-slider title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
+            <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
+            <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
+            <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
+            <app-slider title="Popular" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
+        </div>
+    </div>
+</div>
