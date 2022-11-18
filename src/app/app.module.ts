@@ -37,6 +37,8 @@ import { SingleMovieComponent } from './Components/single-movie/single-movie.com
 import { PlayListComponent } from './Components/play-list/play-list.component';
 import { TvshowComponent } from './Components/tvshow/tvshow.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
+import { LatestComponent } from './Components/latest/latest.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SingleMovieComponent,
     PlayListComponent,
     TvshowComponent,
+    DiscovermovieComponent,
+    LatestComponent,
 
 
   ],
@@ -78,11 +82,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     VgCoreModule,
     VgControlsModule,
+    FormsModule,
     VgOverlayPlayModule,
     MatDialogModule,
     VgBufferingModule,
     MatSidenavModule,
-    FormsModule, ReactiveFormsModule
+    ReactiveFormsModule
   ],
   providers: [
     HttpClientModule

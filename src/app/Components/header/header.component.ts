@@ -30,6 +30,13 @@ export class HeaderComponent implements OnInit {
   onHome() {
     this.route.navigate(['mainpage'])
   }
+
+  onMovies() {
+    this.route.navigate(['discovermovie'])
+  }
+  onLatest() {
+    this.route.navigate(['latest'])
+  }
   @ViewChild('stickyHeader') header!: ElementRef;
   headerBGUrl!: any;
   myUrlVariable!: string;

@@ -5,13 +5,14 @@ import { LoginComponent } from './Components/login/login.component';
 import { MainpageComponent } from './Components/mainpage/mainpage.component';
 import { VideoplayerComponent } from './Components/videoplayer/videoplayer.component';
 import { UserloginGuard } from './userlogin.guard';
-
 import { SearchComponent } from './Components/search/search.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { MovieListComponent } from './Components/movie-list/movie-list.component';
 import { SingleMovieComponent } from './Components/single-movie/single-movie.component';
 import { PlayListComponent } from './Components/play-list/play-list.component';
 import { TvshowComponent } from './Components/tvshow/tvshow.component';
+import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
+import { LatestComponent } from './Components/latest/latest.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,17 @@ const routes: Routes = [
   {
     path: 'tvshow',
     component: TvshowComponent,
+    // canActivate: [UserloginGuard]
+  },
+  {
+    path: 'discovermovie',
+    component: DiscovermovieComponent,
+    // canActivate: [UserloginGuard]
+  }
+  ,
+  {
+    path: 'latest',
+    component: LatestComponent,
     // canActivate: [UserloginGuard]
   }
 

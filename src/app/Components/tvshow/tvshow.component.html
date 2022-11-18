@@ -1,4 +1,89 @@
 <app-header></app-header>
-<div class="container">
-    <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
+<div class="bgContainer">
+    <!-- tv genres -->
+    <div class="genresContainer">
+        <h1 class="filterheading">Filter By: </h1>
+        <select class="selecteInput" [(ngModel)]="selecteGenresId" selected (ngModelChange)="onSelectedGenre($event)">
+            <option [value]="m.id" *ngFor="let m of tvgenresId?.genres; let i = index">
+                {{m.name}}
+            </option>
+        </select>
+    </div>
+    <!-- <h1>id: {{selecteGenresId}}</h1> -->
+    <!--all tv shows  -->
+    <div class="container">
+        <div class="headerContainer">
+            <h1>Discover Tv Shows</h1>
+        </div>
+        <div class="list">
+            <div class="card" *ngFor="let m of filterTvData?.results; let i =index">
+                <div>
+                    <img src="https://image.tmdb.org/t/p/w300{{m.poster_path}}">
+                    <div class="desc">
+                        <h5>{{m.title}}</h5>
+                        <p> <span class="text-warning">Rating</span> {{m.vote_average}}</p>
+                        <p>Language:<span><b> {{m.original_language}}</b></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tv shows -->
+    <!-- <div class="container">
+        <div class="headerContainer">
+            <h1>Discover Tv Shows</h1>
+        </div>
+        <div class="list">
+            <div class="card" *ngFor="let m of discoverTvShows?.results; let i =index">
+                <div>
+                    <img src="https://image.tmdb.org/t/p/w300{{m.poster_path}}">
+                    <div class="desc">
+                        <h5>{{m.title}}</h5>
+                        <p> <span class="text-warning">Rating</span> {{m.vote_average}}</p>
+                        <p>Language:<span><b> {{m.original_language}}</b></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="container">
+        <div class="headerContainer">
+            <h1>Top Rated Tv Shows</h1>
+        </div>
+        <div class="list">
+            <div class="card" *ngFor="let m of topRatedShows?.results; let i =index">
+                <div>
+                    <img src="https://image.tmdb.org/t/p/w300{{m.poster_path}}" alt="{{m.name}}">
+                    <div class="desc">
+                        <h5>{{m.title}}</h5>
+                        <p> <span class="text-warning">Rating</span> {{m.vote_average}}</p>
+                        <p>Language:<span><b> {{m.original_language}}</b></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    on Air tv shows-->
+    <!-- <div class="container">
+        <div class="headerContainer">
+            <h1>On The Air shows</h1>
+        </div>
+        <div class="list">
+            <div class="card" *ngFor="let m of tvOnAirShows?.results; let i =index">
+                <div>
+                    <img src="https://image.tmdb.org/t/p/w300{{m.poster_path}}" alt="{{m.name}}">
+                    <div class="desc">
+                        <h5>{{m.title}}</h5>
+                        <p> <span class="text-warning">Rating</span>{{m.vote_average}}</p>
+                        <p>Language:<span><b> {{m.original_language}}</b></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </div>

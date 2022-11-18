@@ -7,16 +7,16 @@ import { Movies, login, SignUp } from '../Model/movies';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
-const enum endpoint {
-  latest = '/movie/latest',
-  now_playing = '/movie/now_playing',
-  popular = '/movie/popular',
-  top_rated = '/movie/top_rated',
-  upcoming = '/movie/upcoming',
-  trending = '/trending/all/week',
-  originals = '/discover/tv',
-  singleMovie = '/movie/{movie_id}'
-}
+// const enum endpoint {
+//   latest = '/movie/latest',
+//   now_playing = '/movie/now_playing',
+//   popular = '/movie/popular',
+//   top_rated = '/movie/top_rated',
+//   upcoming = '/movie/upcoming',
+//   trending = '/trending/all/week',
+//   originals = '/discover/tv',
+//   singleMovie = '/movie/{movie_id}'
+// }
 
 @Injectable({
   providedIn: 'root'
