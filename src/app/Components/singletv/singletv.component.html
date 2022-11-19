@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="bgcontainer">
+    <img src="{{headerBGUrl}}" />
+
+
+    <div class="desc">
+        <div>
+            <h1 class="movieTitle">{{data?.title}}</h1>
+            <h1 class="overView">{{data?.overview}}</h1>
+            <h1 class="overView">IMDB: {{data?.vote_average}}</h1>
+            <h1 class="overView">Release Date: {{data?.release_date}}</h1>
+        </div>
+        <div class="btnContainer">
+            <div class="playContainer">
+                <button class="playListBtn" (click)="onAddPlayList(data)">Add to playlist</button>
+                <button class="playVideoBtn" (click)="playVideo()">Play <mat-icon>arrow_right</mat-icon></button>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="playVideoBtn watchTrailer"
+                mat-button (click)="openPopup()">Watch Trailer</button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <youtube-player [videoId]="key" suggestedQuality="hd720" [startSeconds]="startSeconds"
+                    [endSeconds]="endSeconds" [height]="height" [width]="width">
+                </youtube-player>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>

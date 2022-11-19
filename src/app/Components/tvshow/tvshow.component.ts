@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Tvshows } from 'src/app/Model/tv';
 import { MovieserviceService } from 'src/app/Services/movieservice.service';
@@ -10,6 +10,9 @@ import { TvService } from 'src/app/Services/tv.service';
   styleUrls: ['./tvshow.component.css']
 })
 export class TvshowComponent implements OnInit {
+  @Input() sliderConfig: any;
+  @Input() title !: string;
+  @Input() movies !: Tvshows;
   subs: Subscription[] = [];
   discoverTvShows!: Tvshows;
   // topRatedShows: any;

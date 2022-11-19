@@ -14,7 +14,7 @@ export class PlayListComponent implements OnInit {
   constructor(private playListService: MyplaylistService) { }
 
   ngOnInit(): void {
-    this.playListService.getProducts().subscribe(res => {
+    this.playListService.getMovie().subscribe(res => {
       this.movie = res;
       console.log(this.movie)
 
@@ -23,7 +23,7 @@ export class PlayListComponent implements OnInit {
 
   removeItem(item: any) {
 
-    this.playListService.removeCartItem(item);
+    this.playListService.removePlaylistItem(item);
   }
 
   onEmptyPlayList() {

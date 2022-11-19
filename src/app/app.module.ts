@@ -38,7 +38,7 @@ import { PlayListComponent } from './Components/play-list/play-list.component';
 import { TvshowComponent } from './Components/tvshow/tvshow.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
-import { LatestComponent } from './Components/latest/latest.component';
+import { SingletvComponent } from './Components/singletv/singletv.component';
 
 
 @NgModule({
@@ -64,7 +64,7 @@ import { LatestComponent } from './Components/latest/latest.component';
     PlayListComponent,
     TvshowComponent,
     DiscovermovieComponent,
-    LatestComponent,
+    SingletvComponent,
 
 
   ],

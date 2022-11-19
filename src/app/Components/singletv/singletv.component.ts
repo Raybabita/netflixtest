@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movies } from 'src/app/Model/movies';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { MovieserviceService } from 'src/app/Services/movieservice.service';
 import { MyplaylistService } from 'src/app/Services/myplaylist.service';
 import { environment } from 'src/environments/environment';
 import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
-
+import { TvService } from 'src/app/Services/tv.service';
 
 @Component({
-  selector: 'app-single-movie',
-  templateUrl: './single-movie.component.html',
-  styleUrls: ['./single-movie.component.css']
+  selector: 'app-singletv',
+  templateUrl: './singletv.component.html',
+  styleUrls: ['./singletv.component.css']
 })
-export class SingleMovieComponent implements OnInit {
+export class SingletvComponent implements OnInit {
   id: any;
   data: any;
   headerBGUrl!: any;
@@ -39,10 +38,8 @@ export class SingleMovieComponent implements OnInit {
       this.apiLoaded = true;
     }
   }
-
-
   getOne() {
-    this.movieService.getMovieById(this.id).subscribe(items => {
+    this.tvservice.getTvShowById(this.id).subscribe(items => {
       this.data = items;
       // this.data = items.videos.results?.[0].key;
       this.key = items.videos.results?.[0].key;
@@ -54,13 +51,13 @@ export class SingleMovieComponent implements OnInit {
 
 
   image: any;
-  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieserviceService, private _sanitizer: DomSanitizer,
+  constructor(private activatedRoute: ActivatedRoute, private tvservice: TvService, private _sanitizer: DomSanitizer,
     private playListService: MyplaylistService,
     private route: Router) {
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.videoURL}`);
   }
   getImage() {
-    this.movieService.getImage(this.id).subscribe(imageItem => {
+    this.tvservice.getImagebyId(this.id).subscribe(imageItem => {
       this.image = imageItem;
       this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + imageItem?.backdrops?.[1].file_path;
       // console.log(this.headerBGUrl)

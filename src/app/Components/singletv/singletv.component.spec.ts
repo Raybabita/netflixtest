@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LatestComponent } from './latest.component';
+import { SingletvComponent } from './singletv.component';
 
-describe('LatestComponent', () => {
-  let component: LatestComponent;
-  let fixture: ComponentFixture<LatestComponent>;
+describe('SingletvComponent', () => {
+  let component: SingletvComponent;
+  let fixture: ComponentFixture<SingletvComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LatestComponent ]
+      declarations: [ SingletvComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LatestComponent);
+    fixture = TestBed.createComponent(SingletvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

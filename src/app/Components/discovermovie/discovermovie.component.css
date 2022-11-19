@@ -43,10 +43,9 @@ p {
 
 }
 
-
 .headerContainer {
-    /* padding-top: 20px; */
-    width: 90%;
+    padding-top: 20px;
+    width: 85%;
 }
 
 
@@ -72,4 +71,45 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.genresContainer {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+
+}
+
+.filterheading {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.genreTitle {
+    background-color: red;
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    border-radius: 40%;
+    outline: none;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+}
+
+.selecteInput {
+    height: 45px;
+    width: 350px;
+    border-radius: 40px;
+    padding-left: 15px;
+    font-size: 15px;
+    outline: none;
+    padding-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }

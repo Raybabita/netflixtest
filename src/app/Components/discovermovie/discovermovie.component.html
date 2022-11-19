@@ -1,45 +1,28 @@
 <app-header></app-header>
-
-
-<!-- Top Rated Movei -->
 <div class="bgContainer">
-    <div class="container">
-        <h1 class="headerContainer">
-            <h1>Top Rated Moveis</h1>
-        </h1>
-        <div class=" list">
-            <div class="card" *ngFor="let pm of topRatedMovies?.results; let i =index">
-                <div *ngIf="searchText ===''|| pm.title.toLowerCase().includes(searchText)">
-
-                    <img src="{{pm.backdrop_path}}" />
-                    <div class="desc">
-                        <h5>{{pm.title}}</h5>
-                        <p> <span class="text-warning">Rating: </span>{{pm.vote_average}}</p>
-                        <p>Language: <span class="p-1"
-                                style="background-color:gray"><b>{{pm.original_language}}</b></span>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- tv genres -->
+    <div class="genresContainer">
+        <h1 class="filterheading">Filter By: </h1>
+        <select class="selecteInput" [(ngModel)]="selecteGenresId" selected (ngModelChange)="onSelectedGenre($event)">
+            <option [value]="m.id" *ngFor="let m of tvgenresId?.genres; let i = index">
+                {{m.name}}
+            </option>
+        </select>
     </div>
-
-    <!-- Popular Movie -->
+    <!-- <h1>id: {{selecteGenresId}}</h1> -->
+    <!--all tv shows  -->
     <div class="container">
         <div class="headerContainer">
-            <h1>Popular Moveis</h1>
+            <h1>Discover Movies</h1>
         </div>
-
         <div class="list">
-            <div class="card" *ngFor="let m of popularMovies?.results; let i =index">
-                <div *ngIf="searchText ===''|| m.title.toLowerCase().includes(searchText)">
-                    <img src="{{m.backdrop_path}}" />
+            <div class="card" *ngFor="let m of filterTvData?.results; let i =index">
+                <div>
+                    <img routerLink="singleMovie/{{m.id}}" src="https://image.tmdb.org/t/p/w300{{m.poster_path}}">
                     <div class="desc">
                         <h5>{{m.title}}</h5>
-                        <p> <span class="text-warning">Rating</span>{{m.vote_average}}</p>
-                        <p>Language:<span class="p-1"
-                                style="background-color:gray"><b>{{m.original_language}}</b></span>
+                        <p> <span class="text-warning">Rating</span> {{m.vote_average}}</p>
+                        <p>Language:<span><b> {{m.original_language}}</b></span>
                         </p>
                     </div>
                 </div>
@@ -47,90 +30,4 @@
         </div>
     </div>
 
-    <!-- Trending Movies -->
-    <div class="container">
-        <div class="headerContainer">
-            <h1>Trending Moveis</h1>
-        </div>
-
-        <div class="list">
-            <div class="card" *ngFor="let pm of trendingMovies?.results; let i =index">
-                <div *ngIf="searchText ===''|| pm.title.toLowerCase().includes(searchText)">
-                    <img src="{{pm.backdrop_path}}" />
-                    <div class="desc">
-                        <h5>{{pm.title}}</h5>
-                        <p> <span class="text-warning">Rating</span>{{pm.vote_average}}</p>
-                        <p>Language:<span class="p-1"
-                                style="background-color:gray"><b>{{pm.original_language}}</b></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- upcoming movies -->
-    <div class="container">
-        <div class="headerContainer">
-            <h1>UpComing Moveis</h1>
-        </div>
-
-
-        <div class="list">
-            <div class="card" *ngFor="let pm of upComingMovies?.results; let i =index">
-                <div *ngIf="searchText ===''|| pm.title.toLowerCase().includes(searchText)">
-                    <img src="{{pm.backdrop_path}}" />
-                    <div class="desc">
-                        <h5>{{pm.title}}</h5>
-                        <p> <span class="text-warning">Rating</span>{{pm.vote_average}}</p>
-                        <p>Language:<span class="p-1"
-                                style="background-color:gray"><b>{{pm.original_language}}</b></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- now playing movies -->
-    <div class="container">
-        <div class="headerContainer">
-            <h1>Now Playing Moveis</h1>
-        </div>
-
-        <div class="list">
-            <div class="card" *ngFor="let pm of nowPlayingMovies?.results; let i =index">
-                <div *ngIf="searchText ===''|| pm.title.toLowerCase().includes(searchText)">
-                    <img src="{{pm.backdrop_path}}" />
-                    <div class="desc">
-                        <h5>{{pm.title}}</h5>
-                        <p> <span class="text-warning">Rating</span>{{pm.vote_average}}</p>
-                        <p>Language:<span class="p-1"
-                                style="background-color:gray"><b>{{pm.original_language}}</b></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Originals -->
-    <div class="container">
-        <div class="headerContainer">
-            <h1>Originals Moveis</h1>
-        </div>
-
-
-        <div class="list">
-            <div class="card" *ngFor="let pm of originals?.results; let i =index">
-                <div *ngIf="searchText ===''|| pm.title.toLowerCase().includes(searchText)">
-                    <img src="{{pm.backdrop_path}}" />
-                    <div class="desc">
-                        <h5>{{pm.title}}</h5>
-                        <p> <span class="text-warning">Rating</span>{{pm.vote_average}}</p>
-                        <p>Language:<span class="p-1"
-                                style="background-color:gray"><b>{{pm.original_language}}</b></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

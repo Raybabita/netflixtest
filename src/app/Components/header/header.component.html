@@ -7,7 +7,6 @@
             <li><a class="activeClass" (click)="onHome()">Home</a></li>
             <li><a (click)="onTvshow()">TV Shows</a></li>
             <li><a (click)="onMovies()">Movies</a></li>
-            <li><a (click)="onLatest()">Latest</a></li>
             <li><a (click)="onMyList()">My WatchList <span class="totalItem">{{totalItem}}</span></a></li>
         </ul>
     </div>
@@ -19,9 +18,6 @@
                 </a>
             </li>
             <li><a (click)="logout()">LOGOUT</a></li>
-            <li><a href="#">
-                    <mat-icon>card_giftcard</mat-icon>
-                </a></li>
             <li><a href="#">
                     <mat-icon>notifications</mat-icon>
                 </a></li>
@@ -41,7 +37,7 @@
             <ul class="mobileMenu">
                 <li class="nav-link-s1">Profile</li>
                 <li class="nav-link-s1">Setttings</li>
-                <li class="nav-link-s1">Gitf</li>
+
                 <li class="nav-link-s1">Notifications</li>
                 <li class="nav-link-s1" (click)="logout()">Logout</li>
             </ul>

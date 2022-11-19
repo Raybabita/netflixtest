@@ -16,7 +16,7 @@ export class TvService {
   constructor(private http: HttpClient, private router: Router) { }
   url: string = 'https://api.themoviedb.org/3';
 
-  getDiscoverTvShows(): Observable<any> {
+  getDiscoverTvShows(): Observable<Tvshows> {
     return this.http.get<Tvshows>('https://api.themoviedb.org/3/discover/tv?api_key=285bb9715cde096a3fbb2cfdac23701f&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0')
   }
   // getTopRatedTvShows(): Observable<any> {
@@ -26,7 +26,7 @@ export class TvService {
   //   return this.http.get<Tvshows>(this.url + '/tv/on_the_air?api_key=' + environment.api_key)
   // }
 
-  getGenreId(): Observable<any> {
+  getGenreId(): Observable<Tvshows> {
     return this.http.get<Tvshows>(this.url + '/genre/tv/list?api_key=' + environment.api_key)
   }
   getTvShowsBasedOnGenre(selecteGenresId: any): Observable<any> {
@@ -34,6 +34,24 @@ export class TvService {
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/discover/tv?api_key=285bb9715cde096a3fbb2cfdac23701f&with_genres=${selecteGenresId}`)
   }
 
+
+
+  getTvShowById(id: any): Observable<Tvshows> {
+    // alert(id);
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+
+  }
+
+
+  getImagebyId(id: any): Observable<Tvshows> {
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}/images?api_key=` + environment.api_key);
+  }
+
+  getVideobyId(id: any): Observable<Tvshows> {
+    alert(id);
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/157336?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+
+  }
 
 
 }

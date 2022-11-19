@@ -11,6 +11,24 @@
       "password": "kate",
       "email": "kate@gmail.com",
       "id": 39
+    },
+    {
+      "email": "ram@gmail.com",
+      "password": "ram",
+      "name": "ram",
+      "id": 40
+    },
+    {
+      "email": "sam@gmail.com",
+      "password": "sam",
+      "name": "sam",
+      "id": 41
+    },
+    {
+      "email": "golu@gmail.com",
+      "password": "golu",
+      "name": "golu",
+      "id": 42
     }
   ]
 }

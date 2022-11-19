@@ -11,20 +11,20 @@ export class MyplaylistService {
 
   constructor() { }
 
-  getProducts() {
+  getMovie() {
     return this.movieList.asObservable();
   }
-  setProduct(prouct: any) {
+  setMovie(prouct: any) {
     this.movieItemList.push(...prouct);
     this.movieList.next(prouct);
   }
-  addtocart(product: any) {
+  addtoList(product: any) {
     this.movieItemList.push(product);
     this.movieList.next(this.movieItemList);
     console.log(this.movieItemList);
   }
 
-  removeCartItem(product: any) {
+  removePlaylistItem(product: any) {
     this.movieItemList.map((a: any, index: any) => {
       if (product.id === a.id) {
         this.movieItemList.splice(index, 1);

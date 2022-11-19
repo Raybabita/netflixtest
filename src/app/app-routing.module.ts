@@ -12,12 +12,14 @@ import { SingleMovieComponent } from './Components/single-movie/single-movie.com
 import { PlayListComponent } from './Components/play-list/play-list.component';
 import { TvshowComponent } from './Components/tvshow/tvshow.component';
 import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
-import { LatestComponent } from './Components/latest/latest.component';
+import { SingletvComponent } from './Components/singletv/singletv.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+
   },
   {
     path: 'login', component: LoginComponent,
@@ -25,49 +27,55 @@ const routes: Routes = [
   {
     path: 'mainpage',
     component: MainpageComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'video',
     component: VideoplayerComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'mainpage/video',
     component: VideoplayerComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'movieSearchList',
     component: MovieListComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'mainpage/singleMovie/:id',
     component: SingleMovieComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'singleMovie/myPlaylist',
     component: PlayListComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'tvshow',
     component: TvshowComponent,
-    // canActivate: [UserloginGuard]
+    canActivate: [UserloginGuard]
   },
   {
     path: 'discovermovie',
     component: DiscovermovieComponent,
-    // canActivate: [UserloginGuard]
-  }
-  ,
+    canActivate: [UserloginGuard]
+  },
   {
-    path: 'latest',
-    component: LatestComponent,
-    // canActivate: [UserloginGuard]
-  }
+    path: 'tvshow/singleTv/:id',
+    component: SingletvComponent,
+    canActivate: [UserloginGuard]
+  },
+  {
+    path: 'discovermovie/singleMovie/:id',
+    component: SingleMovieComponent,
+    canActivate: [UserloginGuard]
+  },
+
+
 
 
 ];

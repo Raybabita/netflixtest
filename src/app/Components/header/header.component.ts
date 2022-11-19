@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.playlistService.getProducts().subscribe(res => {
+    this.playlistService.getMovie().subscribe(res => {
       this.totalItem = res.length;
     })
   }
@@ -34,9 +34,7 @@ export class HeaderComponent implements OnInit {
   onMovies() {
     this.route.navigate(['discovermovie'])
   }
-  onLatest() {
-    this.route.navigate(['latest'])
-  }
+
   @ViewChild('stickyHeader') header!: ElementRef;
   headerBGUrl!: any;
   myUrlVariable!: string;
@@ -56,8 +54,8 @@ export class HeaderComponent implements OnInit {
     this.isshowMenu = !this.isshowMenu;
   }
   logout() {
-    localStorage.removeItem("userDetails");
-    this.route.navigate(['/'])
+    localStorage.removeItem("userDatails");
+    this.route.navigate(['/login'])
   }
 
   onMyList() {

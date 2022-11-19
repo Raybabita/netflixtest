@@ -9,7 +9,7 @@
             </option>
         </select>
     </div>
-    <!-- <h1>id: {{selecteGenresId}}</h1> -->
+    <h1>id: {{selecteGenresId}}</h1>
     <!--all tv shows  -->
     <div class="container">
         <div class="headerContainer">
@@ -18,7 +18,7 @@
         <div class="list">
             <div class="card" *ngFor="let m of filterTvData?.results; let i =index">
                 <div>
-                    <img src="https://image.tmdb.org/t/p/w300{{m.poster_path}}">
+                    <img routerLink="singleTv//{{m.id}}" src="https://image.tmdb.org/t/p/w300{{m.poster_path}}">
                     <div class="desc">
                         <h5>{{m.title}}</h5>
                         <p> <span class="text-warning">Rating</span> {{m.vote_average}}</p>
