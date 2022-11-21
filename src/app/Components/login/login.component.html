@@ -4,11 +4,10 @@
             src="https://res.cloudinary.com/dahw90b2z/image/upload/v1667982530/logo_cfqupd.png" />
     </div>
 
-    <div *ngIf="!showLogin" class="bgContainer">
+    <div class="bgContainer">
         <h1 class="signInHeading">Sign In</h1>
         <form [formGroup]="loginForm" class="loginForm" #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)">
             <div>
-
                 <input type='text' class="inputField" formControlName="email" ngModel matInput
                     placeholder="Enter Email">
                 <p class="error-msg"
@@ -27,17 +26,15 @@
                 <button class="signInBtn" type="submit" [disabled]="!loginForm.valid" mat-raised-button
                     color="warn">Sign
                     In</button>
-                <p class="account-desc-text">Don't have an account? <a class="auth-toggle-link" (click)="openSignUp()">
+                <p class="account-desc-text">Don't have an account? <a class="auth-toggle-link" (click)="onSignup()">
                         Sign up</a></p>
                 <p class="error-msg"> {{authError}}</p>
-
             </div>
-
         </form>
     </div>
 
     <!-- login form end here -->
-    <div *ngIf="showLogin" class="bgContainer">
+    <!-- <div *ngIf="showLogin" class="bgContainer">
         <h1 class="signInHeading">Sign up</h1>
         <form [formGroup]="signUpForm" class="loginForm" #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
             <div>
@@ -76,7 +73,7 @@
             </div>
 
         </form>
-    </div>
+    </div> -->
 
 
 
@@ -104,27 +101,4 @@
         </div>
         <p class="companyNameText">Netflix India</p>
     </footer>
-
-    <div class="seller-auth">
-        <div class="signup" *ngIf="!showLogin">
-            <h1 class="signup-heading">Seller Sign-up</h1>
-            <form class="common-form" #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
-                <input class="form-input" type='text' name="name" ngModel placeholder="Enter Name" />
-                <input class="form-input" type='password' name="password" ngModel placeholder="Enter password" />
-                <input class="form-input" type='text' name="email" ngModel placeholder="Enter Email" />
-                <button class="form-button">Signup</button>
-                <a class="auth-toggle-link" (click)="openLogin()">Already have Account? login here</a>
-            </form>
-        </div>
-
-        <div class="signup" *ngIf="showLogin">
-            <h1 class="signup-heading"> Seller Login</h1>
-            <form class="common-form" #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)">
-                <input class="form-input" type='text' name="email" ngModel placeholder="Enter Email" />
-                <input class="form-input" type='password' name="password" ngModel placeholder="Enter password" />
-                <button class="form-button">Login</button>
-                <a class="auth-toggle-link" (click)="openSignUp()">Don't have an account? Sign up</a>
-                <p class="error-msg"> {{authError}}</p>
-            </form>
-        </div>
-    </div>
+</div>

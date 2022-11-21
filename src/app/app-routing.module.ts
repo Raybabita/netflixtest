@@ -13,6 +13,7 @@ import { PlayListComponent } from './Components/play-list/play-list.component';
 import { TvshowComponent } from './Components/tvshow/tvshow.component';
 import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
 import { SingletvComponent } from './Components/singletv/singletv.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -25,57 +26,58 @@ const routes: Routes = [
     path: 'login', component: LoginComponent,
   },
   {
+    path: 'signup', component: SignUpComponent
+  },
+  {
     path: 'mainpage',
     component: MainpageComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'video',
     component: VideoplayerComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'mainpage/video',
     component: VideoplayerComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'movieSearchList',
     component: MovieListComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'mainpage/singleMovie/:id',
     component: SingleMovieComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'singleMovie/myPlaylist',
     component: PlayListComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'tvshow',
     component: TvshowComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'discovermovie',
     component: DiscovermovieComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'tvshow/singleTv/:id',
     component: SingletvComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
   {
     path: 'discovermovie/singleMovie/:id',
     component: SingleMovieComponent,
-    canActivate: [UserloginGuard]
+    // canActivate: [UserloginGuard]
   },
-
-
 
 
 ];

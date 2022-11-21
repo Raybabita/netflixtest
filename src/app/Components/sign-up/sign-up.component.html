@@ -1,0 +1,109 @@
+<!-- <div class="seller-auth">
+    <div class="signup">
+        <h1 class="signup-heading">Seller Sign-up</h1>
+        <div class="alert alert-primary" role="alert">
+            Account has been created <a (click)="onLogin()">login</a>
+        </div>
+        <form class="common-form" [formGroup]="signUpForm">
+            <input type='text' class="inputField" formControlName="name" ngModel matInput placeholder="Enter Password">
+            <p class="error-msg" *ngIf="signUpForm.controls['name'].dirty && signUpForm.hasError('required','name')">
+                *Password
+                Required</p>
+            <br />
+            <input type='text' class="inputField" formControlName="email" ngModel matInput placeholder="Enter Email">
+            <p class="error-msg" *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
+                *Email
+                Required</p>
+            <br />
+            <input type='password' class="inputField" formControlName="password" ngModel matInput
+                placeholder="Enter Password">
+            <p class="error-msg"
+                *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+                *Password
+                Required</p>
+            <br />
+            <button class="signInBtn" (click)="signUp()" type="submit" [disabled]="!signUpForm.valid" mat-raised-button
+                color="warn">Create Account</button>
+
+
+            <a class="auth-toggle-link">Already have Account? login here</a>
+        </form>
+    </div>
+
+
+</div>
+ -->
+
+<div class="loginContainer">
+    <div>
+        <img class="logo" alt="Netflix Logo"
+            src="https://res.cloudinary.com/dahw90b2z/image/upload/v1667982530/logo_cfqupd.png" />
+    </div>
+    <div class="bgContainer">
+        <h1 class="signInHeading">Sign up</h1>
+        <div [ngClass]="className" role="alert">
+            {{message}}<a routerLink="/login" class="text-primary">Login here</a>
+        </div>
+
+        <form [formGroup]="signUpForm" class="loginForm">
+            <div>
+                <input type='text' formControlName="name" class="inputField" ngModel matInput placeholder="Enter Name">
+                <p class="error-msg"
+                    *ngIf="signUpForm.controls['name'].dirty && signUpForm.hasError('required','name')">
+                    *Name
+                    Required</p>
+            </div>
+            <div>
+
+                <input type='password' class="inputField" formControlName="password" ngModel matInput
+                    placeholder="Enter Password">
+
+                <p class="error-msg"
+                    *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+                    *Password
+                    Required</p>
+            </div>
+            <div>
+
+                <input type='text' class="inputField" formControlName="email" ngModel matInput
+                    placeholder="Enter Email">
+
+                <p class="error-msg"
+                    *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
+                    *Email
+                    Required</p>
+            </div>
+            <div>
+                <button [disabled]="!signUpForm.valid" type="submit" (click)="signUp()" class="signInBtn"
+                    mat-raised-button color="warn">Sign up</button>
+                <p class="account-desc-text">Already have Account? <a class="auth-toggle-link" (click)="onLogin()">login
+                        here</a></p>
+
+            </div>
+
+        </form>
+    </div>
+    <footer class="footer">
+        <p class="call-text">Questions? Call 000-800-040-1843</p>
+        <div class="footer-cols">
+            <ul class="listItem">
+                <li><a class="link" href="#">FAQ</a></li>
+                <li><a class="link" href="#">Cookie Preferences</a></li>
+
+            </ul>
+            <ul class="listItem">
+                <li><a class="link" href="#">Help Centre</a></li>
+                <li><a class="link" href="#">Corporate Information</a></li>
+
+            </ul>
+            <ul class="listItem">
+                <li><a class="link" href="#">Terms of Use</a></li>
+
+            </ul>
+            <ul class="listItem">
+                <li><a class="link" href="#">privacy</a></li>
+            </ul>
+        </div>
+        <p class="companyNameText">Netflix India</p>
+    </footer>
+</div>

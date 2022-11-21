@@ -11,12 +11,12 @@ import { SignUp, login } from 'src/app/Model/movies';
 })
 export class LoginComponent implements OnInit {
 
-  showLogin = false;
+  // showLogin = false;
   authError: string = "";
 
   public loginForm!: FormGroup;
 
-  public signUpForm!: FormGroup;
+  // public signUpForm!: FormGroup;
 
   constructor(private user: MovieserviceService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     })
 
-    this.signUpForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      name: ['', Validators.required]
-    })
+    // this.signUpForm = this.formBuilder.group({
+    //   email: ['', Validators.required],
+    //   password: ['', Validators.required],
+    //   name: ['', Validators.required]
+    // })
   }
 
   signUp(data: SignUp): void {
@@ -45,12 +45,18 @@ export class LoginComponent implements OnInit {
     // });
     this.user.userSignUp(data);
   }
-  openLogin() {
-    this.showLogin = false;
+  // openLogin() {
+  //   this.showLogin = false;
+  // }
+  // openSignUp() {
+  //   this.showLogin = true;
+  // }
+
+  onSignup() {
+    this.router.navigate(['signup'])
   }
-  openSignUp() {
-    this.showLogin = true;
-  }
+
+
 
   login(data: SignUp): void {
     console.log(data);

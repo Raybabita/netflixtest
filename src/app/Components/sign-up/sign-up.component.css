@@ -1,0 +1,190 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    box-shadow: 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+    background-image: url('https://res.cloudinary.com/dahw90b2z/image/upload/v1667979965/mainpage_netflix_bdlh8x.jpg');
+}
+
+.bgContainer {
+    background-color: #fff;
+}
+
+
+.logo {
+    padding: 30px;
+    height: 40px;
+}
+
+.auth-toggle-link {
+    text-decoration: underline;
+    color: blue;
+    margin-top: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.account-desc-text {
+    padding: 20px;
+    color: rgb(15, 13, 13);
+}
+
+.loginForm {
+    width: 350px;
+    max-width: 550xp;
+    min-width: 350px;
+    /* background-color: rgba(0, 0, 0, .75); */
+    border-radius: 4px;
+    display: flex;
+    padding: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signInHeading {
+    color: #fff;
+    font-family: "Roboto";
+
+}
+
+.inputText {
+    display: flex;
+    min-width: 300px;
+    background-color: rgb(249, 240, 240);
+    height: 50px;
+    color: rgb(14, 12, 12);
+    margin-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 14px;
+    margin: 10px;
+}
+
+.inputField {
+    height: 40px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    width: 300px;
+    border-bottom: 1px solid gray;
+}
+
+.signInBtn {
+    margin-top: 20px;
+    background-color: #e50914;
+    height: 50px;
+    min-width: 310px;
+}
+
+.rememberMeText {
+    padding: 20px;
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.learnMoreText {
+    color: blue
+}
+
+.text {
+    color: #8c8c8c;
+    font-size: 15px;
+    margin-top: 11px;
+}
+
+.signupLink {
+    color: #ffffffff;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 4px;
+    display: flex;
+    padding: 60px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerSection {
+    border-top: 10px rgb(69, 69, 69) solid;
+    padding: 50px;
+}
+
+.listItem {
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-decoration: none;
+}
+
+.link {
+    color: #999999;
+    font-size: 12px;
+    text-decoration: none;
+
+}
+
+.call-text {
+    margin-bottom: 1.5rem;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+.footer .footer-cols {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+
+}
+
+.footer li {
+    line-height: 2.4;
+}
+
+.companyNameText {
+    padding-top: 20px;
+
+}
+
+.call-text {
+    color: #999999;
+    align-self: flex-start;
+    margin-left: 290px;
+}
+
+@media screen and (max-width: 568px) {
+    .loginForm {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .loginForm {
+        margin-left: 130px;
+    }
+
+    .inputText {
+        min-width: 200px;
+    }
+
+    .signInBtn {
+        min-width: 200px;
+    }
+}
