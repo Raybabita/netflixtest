@@ -14,6 +14,7 @@ import { TvshowComponent } from './Components/tvshow/tvshow.component';
 import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
 import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -77,14 +78,16 @@ const routes: Routes = [
     path: 'discovermovie/singleMovie/:id',
     component: SingleMovieComponent,
     // canActivate: [UserloginGuard]
+  }, {
+    path: 'profile',
+    component: ProfileComponent,
+    // canActivate: [UserloginGuard]
   },
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [UserloginGuard]
+  // providers: [UserloginGuard]
 })
 export class AppRoutingModule { }

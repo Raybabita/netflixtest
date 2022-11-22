@@ -18,11 +18,12 @@
                 </a>
             </li>
             <li><a (click)="logout()">LOGOUT</a></li>
-            <li><a href="#">
+            <li><a>
                     <mat-icon>notifications</mat-icon>
                 </a></li>
             <li>
-                <img class="avatar-img"
+
+                <img class="avatar-img" (click)="onProfile()"
                     src="https://res.cloudinary.com/dahw90b2z/image/upload/v1662123458/photo-1483985988355-763728e1935b_q9k0ne.avif" />
             </li>
         </ul>

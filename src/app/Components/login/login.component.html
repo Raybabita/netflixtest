@@ -6,7 +6,10 @@
 
     <div class="bgContainer">
         <h1 class="signInHeading">Sign In</h1>
-        <form [formGroup]="loginForm" class="loginForm" #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)">
+        <div [ngClass]="className" role="alert">
+            <p>{{message}}</p>
+        </div>
+        <form [formGroup]="loginForm" class="loginForm">
             <div>
                 <input type='text' class="inputField" formControlName="email" ngModel matInput
                     placeholder="Enter Email">
@@ -23,12 +26,11 @@
                     Required</p>
             </div>
             <div>
-                <button class="signInBtn" type="submit" [disabled]="!loginForm.valid" mat-raised-button
-                    color="warn">Sign
+                <button class="signInBtn" (click)="login()" type="submit" [disabled]="!loginForm.valid"
+                    mat-raised-button color="warn">Sign
                     In</button>
                 <p class="account-desc-text">Don't have an account? <a class="auth-toggle-link" (click)="onSignup()">
                         Sign up</a></p>
-                <p class="error-msg"> {{authError}}</p>
             </div>
         </form>
     </div>

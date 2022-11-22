@@ -26,39 +26,39 @@ export class MovieserviceService {
   LoginErrorMsg = new EventEmitter<boolean>(false)
 
   constructor(private http: HttpClient, private router: Router) { }
-  userSignUp(data: SignUp) {
-    this.http.post('http://localhost:3000/users',
-      data,
-      { observe: 'response' }).subscribe((result) => {
-        this.isUserLoggedIn.next(true);
-        localStorage.setItem('userDatails', JSON.stringify(result.body));
-        // this.router.navigate(['login'])
-        console.log(result);
-      })
-  }
+  // userSignUp(data: SignUp) {
+  //   this.http.post('http://localhost:3000/users',
+  //     data,
+  //     { observe: 'response' }).subscribe((result) => {
+  //       this.isUserLoggedIn.next(true);
+  //       localStorage.setItem('userDatails', JSON.stringify(result.body));
+  //       // this.router.navigate(['login'])
+  //       console.log(result);
+  //     })
+  // }
 
-  reloadUser() {
-    if (localStorage.getItem('userDatails')) {
-      this.isUserLoggedIn.next(true);
-      this.router.navigate(['login'])
-    }
-  }
+  // reloadUser() {
+  //   if (localStorage.getItem('userDatails')) {
+  //     this.isUserLoggedIn.next(true);
+  //     this.router.navigate(['login'])
+  //   }
+  // }
 
-  userLogin(data: login) {
-    console.log(data)
-    this.http.get(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,
-      { observe: 'response' }).subscribe((result: any) => {
-        console.log(result);
-        if (result && result.body && result.body.length) {
-          this.LoginErrorMsg.emit(false)
-          localStorage.setItem('userDatails', JSON.stringify(result.body))
-          this.router.navigate(['mainpage'])
-        } else {
-          console.log("login failed");
-          this.LoginErrorMsg.emit(true)
-        }
-      })
-  }
+  // userLogin(data: login) {
+  //   console.log(data)
+  //   this.http.get(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,
+  //     { observe: 'response' }).subscribe((result: any) => {
+  //       console.log(result);
+  //       if (result && result.body && result.body.length) {
+  //         this.LoginErrorMsg.emit(false)
+  //         localStorage.setItem('userDatails', JSON.stringify(result.body))
+  //         this.router.navigate(['mainpage'])
+  //       } else {
+  //         console.log("login failed");
+  //         this.LoginErrorMsg.emit(true)
+  //       }
+  //     })
+  // }
 
   url: string = 'https://api.themoviedb.org/3';
 

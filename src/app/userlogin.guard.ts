@@ -11,7 +11,7 @@ export class UserloginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (localStorage.getItem('userDetails')) {
+    if (localStorage.getItem('token')) {
       return true
     }
     return this.movieServices.isUserLoggedIn;

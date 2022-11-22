@@ -34,6 +34,9 @@ export class HeaderComponent implements OnInit {
   onMovies() {
     this.route.navigate(['discovermovie'])
   }
+  onProfile() {
+    this.route.navigate(['profile'])
+  }
 
   @ViewChild('stickyHeader') header!: ElementRef;
   headerBGUrl!: any;
@@ -53,8 +56,9 @@ export class HeaderComponent implements OnInit {
   onMenuDisplay() {
     this.isshowMenu = !this.isshowMenu;
   }
+
   logout() {
-    localStorage.removeItem("userDatails");
+    localStorage.removeItem("token")
     this.route.navigate(['/login'])
   }
 

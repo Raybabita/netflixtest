@@ -40,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DiscovermovieComponent } from './Components/discovermovie/discovermovie.component';
 import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
     DiscovermovieComponent,
     SingletvComponent,
     SignUpComponent,
+    ProfileComponent,
 
 
   ],

@@ -3,68 +3,53 @@ import { Movies } from 'src/app/Model/movies';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovieserviceService } from 'src/app/Services/movieservice.service';
-import { SignUp, login } from 'src/app/Model/movies';
+import { AuthService } from 'src/app/Services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  // showLogin = false;
-  authError: string = "";
-
+  message: string = "";
+  isProcess: boolean = false;
+  className = 'd-none';
   public loginForm!: FormGroup;
-
-  // public signUpForm!: FormGroup;
-
-  constructor(private user: MovieserviceService, private router: Router, private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.user.reloadUser();
-
+  constructor(private user: MovieserviceService, private auth: AuthService, private router: Router, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
-
-    // this.signUpForm = this.formBuilder.group({
-    //   email: ['', Validators.required],
-    //   password: ['', Validators.required],
-    //   name: ['', Validators.required]
-    // })
   }
 
-  signUp(data: SignUp): void {
-    console.log(data);
-    // this.seller.userSignUp(data).subscribe((result) => {
-    //   // console.log(result)
-    //   if (result) {
-    //     this.router.navigate(['seller-home'])
-    //   }
-    // });
-    this.user.userSignUp(data);
+  ngOnInit(): void {
   }
-  // openLogin() {
-  //   this.showLogin = false;
-  // }
-  // openSignUp() {
-  //   this.showLogin = true;
-  // }
+
 
   onSignup() {
     this.router.navigate(['signup'])
   }
 
 
-
-  login(data: SignUp): void {
-    console.log(data);
-    this.user.userLogin(data);
-    this.user.LoginErrorMsg.subscribe((isError) => {
-      if (isError) {
-        this.authError = "Email or password is not correct";
+  login() {
+    const data = this.loginForm.value;
+    console.log(data)
+    this.auth.signin(data).subscribe((res) => {
+      if (res.success) {
+        this.isProcess = false;
+        localStorage.setItem('token', res.token)
+        this.message = res.message;
+        // alert(res.success)
+        this.router.navigate(['mainpage'])
+      } else {
+        this.isProcess = false;
+        this.message = res.message;
+        alert(res.message)
       }
-    })
+    }, err => {
+      this.isProcess = false;
+      alert("login failed")
+    });
   }
+
 }

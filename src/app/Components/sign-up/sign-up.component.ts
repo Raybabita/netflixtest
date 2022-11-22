@@ -39,7 +39,7 @@ export class SignUpComponent implements OnInit {
       // alert("user register successfull")
       if (res.success) {
         this.isProcess = false;
-        this.message = "account has been create hppy";
+        this.message = res.message;
         this.className = 'alert alert-success'
       } else {
         this.isProcess = false;
