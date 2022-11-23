@@ -41,6 +41,7 @@ import { DiscovermovieComponent } from './Components/discovermovie/discovermovie
 import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { TvepisodeComponent } from './Components/tvepisode/tvepisode.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
     SingletvComponent,
     SignUpComponent,
     ProfileComponent,
+    TvepisodeComponent,
 
 
   ],

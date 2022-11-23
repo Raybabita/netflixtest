@@ -104,7 +104,17 @@ export class MovieserviceService {
 
   }
 
+  getSimilarMovie(id: any): Observable<Movies> {
+    // alert(id);
+    return this.http.get<Movies>(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
 
+  }
+
+  getRecommendMovie(id: any): Observable<Movies> {
+    // alert(id);
+    return this.http.get<Movies>(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+
+  }
 
   // private URL: string = 'https://api.themoviedb.org/3';
 

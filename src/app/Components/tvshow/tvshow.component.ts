@@ -21,8 +21,9 @@ export class TvshowComponent implements OnInit {
   tvgenresId: any;
   isShow!: false;
   selecteGenresId: any;
-  tvshowsBasedonId: any;
+
   filterTvData!: Tvshows;
+
   constructor(private movie: MovieserviceService, private tvshows: TvService) { }
 
   ngOnInit(): void {
@@ -32,14 +33,6 @@ export class TvshowComponent implements OnInit {
       console.log("tv genres", this.tvgenresId)
     }
     ));
-
-    // this.subs.push(this.tvshows.getDiscoverTvShows().subscribe(data => {
-    //   this.discoverTvShows = data;
-    //   console.log("discover", this.discoverTvShows)
-    // }
-    // ));
-
-
     this.selecteGenresId = 18
     this.onSelectedGenre(this.selecteGenresId);
 

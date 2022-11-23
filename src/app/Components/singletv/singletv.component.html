@@ -1,7 +1,6 @@
 <app-header></app-header>
 <div class="bgcontainer">
-    <img src="{{headerBGUrl}}" />
-
+    <img class="bannerImage" src="{{headerBGUrl}}" />
 
     <div class="desc">
         <div>
@@ -9,6 +8,7 @@
             <h1 class="overView">{{data?.overview}}</h1>
             <h1 class="overView">IMDB: {{data?.vote_average}}</h1>
             <h1 class="overView">Release Date: {{data?.release_date}}</h1>
+
         </div>
         <div class="btnContainer">
             <div class="playContainer">
@@ -19,30 +19,79 @@
             <button type="button" data-toggle="modal" data-target="#exampleModal" class="playVideoBtn watchTrailer"
                 mat-button (click)="openPopup()">Watch Trailer</button>
         </div>
+        <div class="dropdownContainer">
+            <select class="selecteInput" [(ngModel)]="selectedSeasonId" selected
+                (ngModelChange)="onselectedSeason($event)">
+                <option [value]="m.season_number" *ngFor="let m of tvseasonsList?.seasons; let i = index">
+                    {{m.name}}
+                </option>
+            </select>
+        </div>
     </div>
 
 </div>
 
+<div class="similarMovieContainer">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- <div class="list">
+        <div class="tvlist" *ngFor="let m of tvepisode?.episodes;">
+            <div>
+                <img class="episodeTvImage" src="https://image.tmdb.org/t/p/w300{{m.still_path}}">
+
+                <div>
+                    <p>Release Date:{{m.air_date}}</p>
+                    <p>Episode: {{m.episode_number}}</p>
+                    <p>{{m.name}}</p>
+                    <h5>{{m.title}}</h5> -->
+    <!-- <p> <span>Imdb</span> {{m.vote_average}}</p>
+
+
+                </div>
             </div>
-            <div class="modal-body">
-                <youtube-player [videoId]="key" suggestedQuality="hd720" [startSeconds]="startSeconds"
-                    [endSeconds]="endSeconds" [height]="height" [width]="width">
-                </youtube-player>
+        </div>
+    </div> -->
+
+
+    <div>
+        <h3 class="episodeText">All Episode Season {{selectedSeasonId}}</h3>
+        <div class="list">
+            <div class="content" *ngFor="let m of tvepisode?.episodes;">
+                <div routerLink="season/{{m.season_number}}/episode/{{m.episode_number}}" class="content-overlay">
+                </div>
+                <img class="content-image" src="https://image.tmdb.org/t/p/w300{{m.still_path}}">
+                <div class="content-details fadeIn-top">
+                    <h3 class="content-title">Release Date:{{m.air_date}}</h3>
+                    <h3 class="content-title">{{m.name}}</h3>
+                    <h3 class="content-text">Episode: {{m.episode_number}}</h3>
+                    <h3 class="content-text">IMDB: {{m.vote_average}}</h3>
+                </div>
             </div>
-            <!-- <div class="modal-footer">
+        </div>
+
+        <div>
+            <app-slider title="Similar Tv Shows" [movies]="similarTv" [sliderConfig]="sliderConfig"></app-slider>
+            <app-slider title="Recommend Tv Shows" [movies]="recommendTv" [sliderConfig]="sliderConfig"></app-slider>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <youtube-player [videoId]="key" suggestedQuality="hd720" [startSeconds]="startSeconds"
+                        [endSeconds]="endSeconds" [height]="height" [width]="width">
+                    </youtube-player>
+                </div>
+                <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div> -->
+            </div>
         </div>
     </div>
-</div>

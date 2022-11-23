@@ -15,6 +15,7 @@ import { DiscovermovieComponent } from './Components/discovermovie/discovermovie
 import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { TvepisodeComponent } from './Components/tvepisode/tvepisode.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,12 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     // canActivate: [UserloginGuard]
+  }, {
+    path: 'tvshow/singleTv/:id/season/:id/episode/:id',
+
+    component: TvepisodeComponent,
+    // canActivate: [UserloginGuard]
+    // /season/{{m.season_number}}/episode/{{m.episode_number}}
   },
 ];
 

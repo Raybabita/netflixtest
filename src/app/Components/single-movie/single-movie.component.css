@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     /* background-color: gray; */
-    color: white;
+
 
 }
 
@@ -51,8 +51,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
+
     margin-top: 90px;
 
 }
@@ -101,7 +102,8 @@ img {
 }
 
 .playListBtn:hover {
-    opacity: 0.5;
+    background-color: red;
+    color: #fff;
 }
 
 .playVideoBtn {
@@ -120,9 +122,14 @@ img {
     font-size: 15px;
 }
 
+.playVideoBtn:hover {
+    background-color: red;
+    color: #fff;
+}
+
 .watchTrailer {
     background-color: transparent;
-    color: #fff;
+    color: red;
     font-size: 18px;
     font-family: 'Sono', sans-serif;
     font-weight: bold;
@@ -130,20 +137,24 @@ img {
 
 .watchTrailer:hover {
     background-color: red;
+    color: #fff;
 }
 
 .movieTitle {
-    color: #fff;
+    color: red;
     font-size: 50px;
     font-weight: 700;
 }
 
 .overView {
-    color: #fff;
+    color: red;
     font-size: 20px;
     font-weight: 200;
 }
 
-.playVideoBtn:hover {
-    opacity: 0.5;
+
+
+.similarMovieContainer {
+    background-color: #1d1d1d;
+    padding: 50px;
 }

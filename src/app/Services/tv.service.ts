@@ -39,9 +39,39 @@ export class TvService {
   getTvShowById(id: any): Observable<Tvshows> {
     // alert(id);
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+  }
+
+  getTvShowsSeasons(id: any): Observable<Tvshows> {
+    // alert(id);
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}?api_key=285bb9715cde096a3fbb2cfdac23701f&language=en-US&append_to_response=episode_groups`);
 
   }
 
+  getTvShowBasedOnSeason(id: any, selectedSeasonId: any): Observable<any> {
+    // alert(selecteGenresId)
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}/season/${selectedSeasonId}?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=episode_groups`)
+    // https://api.themoviedb.org/3/tv/68814/season/1?api_key=285bb9715cde096a3fbb2cfdac23701f&language=en-US
+  }
+
+  getEpisodeById(tvid: any, seasonnumber: any, episodeNumber: any): Observable<Tvshows> {
+    alert(tvid);
+    alert(seasonnumber)
+    alert(episodeNumber)
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${tvid}/season/${seasonnumber}/episode/${episodeNumber}?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+    // https://api.themoviedb.org/3/tv/1402/season/1/episode/2?api_key=285bb9715cde096a3fbb2cfdac23701f&language=en-US
+  }
+
+  getSimilarTvShows(id: any): Observable<Tvshows> {
+    // alert(id);
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}/similar?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+  }
+
+
+  getRecommendTvShows(id: any): Observable<Tvshows> {
+    // alert(id);
+    return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
+
+  }
 
   getImagebyId(id: any): Observable<Tvshows> {
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${id}/images?api_key=` + environment.api_key);
@@ -52,6 +82,7 @@ export class TvService {
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/157336?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
 
   }
+
 
 
 }
