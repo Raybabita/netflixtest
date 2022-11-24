@@ -1,8 +1,15 @@
 <app-header></app-header>
 
 <div class="container">
-
-    <img src="https://image.tmdb.org/t/p/w500/{{episodeData.still_path}}" />
-    <h1>{{episodeData.name}}</h1>
-    <h1>{{episodeData.overview}}</h1>
+    <img class="bannerImage" src="https://image.tmdb.org/t/p/w500/{{episodeData?.still_path}}" />
+    <h1 class="descText">Name: {{episodeData?.name}}</h1>
+    <h1 class="descText">Release Date: {{episodeData?.air_date}}</h1>
+    <h1 class="descText">Episode: {{episodeData?.episode_number}}</h1>
+    <h1 class="descText">Overview: {{episodeData?.overview}}</h1>
+    <div class="guestStarContainer">
+        <h1 class="descText"> Guest Stars:</h1>
+        <div *ngFor="let pm of episodeData?.guest_stars ;">
+            <p class="guestStarName">{{pm?.name}}</p>
+        </div>
+    </div>
 </div>

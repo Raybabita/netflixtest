@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -9,6 +11,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class ProfileComponent implements OnInit {
   data!: any;
+
   constructor(private auth: AuthService, private route: Router) { }
 
   ngOnInit(): void {
@@ -20,6 +23,13 @@ export class ProfileComponent implements OnInit {
   }
 
 
+  onupdate(data: any) {
+    this.auth.setter(data);
+    console.log("data from update btn", data)
+    // this.route.navigate(['/update'])
+
+  }
+
   onProfile() {
     this.auth.getprofile().subscribe(res => {
       if (res.success) {
@@ -28,7 +38,7 @@ export class ProfileComponent implements OnInit {
         this.logout();
       }
     }, err => {
-      console.log("user data not found")
+      console.log("user data not found", err)
     })
   }
 

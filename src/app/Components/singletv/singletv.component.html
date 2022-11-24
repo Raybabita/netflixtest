@@ -55,8 +55,9 @@
     <div>
         <h3 class="episodeText">All Episode Season {{selectedSeasonId}}</h3>
         <div class="list">
-            <div class="content" *ngFor="let m of tvepisode?.episodes;">
-                <div routerLink="season/{{m.season_number}}/episode/{{m.episode_number}}" class="content-overlay">
+            <div class="content" *ngFor="let m of tvepisode?.episodes;"
+                routerLink="season/{{m.season_number}}/episode/{{m.episode_number}}">
+                <div class="content-overlay">
                 </div>
                 <img class="content-image" src="https://image.tmdb.org/t/p/w300{{m.still_path}}">
                 <div class="content-details fadeIn-top">

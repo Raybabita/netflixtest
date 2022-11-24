@@ -42,6 +42,7 @@ import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { TvepisodeComponent } from './Components/tvepisode/tvepisode.component';
+import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { TvepisodeComponent } from './Components/tvepisode/tvepisode.component';
     SignUpComponent,
     ProfileComponent,
     TvepisodeComponent,
+    UpdateprofileComponent,
 
 
   ],

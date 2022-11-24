@@ -25,7 +25,7 @@ export class TvepisodeComponent implements OnInit {
   }
 
   getEpisode() {
-    alert(this.tvId)
+    // alert(this.tvId)
     this.tvservice.getEpisodeById(this.tvId, this.seasonNumber, this.episodeNumber).subscribe(item => {
       this.episodeData = item;
       console.log(this.episodeData)

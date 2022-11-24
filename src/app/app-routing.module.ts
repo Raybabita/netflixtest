@@ -16,6 +16,7 @@ import { SingletvComponent } from './Components/singletv/singletv.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { TvepisodeComponent } from './Components/tvepisode/tvepisode.component';
+import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,12 @@ const routes: Routes = [
     path: 'tvshow/singleTv/:id/season/:id/episode/:id',
 
     component: TvepisodeComponent,
+    // canActivate: [UserloginGuard]
+    // /season/{{m.season_number}}/episode/{{m.episode_number}}
+  },
+  {
+    path: 'profile/update/:id',
+    component: UpdateprofileComponent,
     // canActivate: [UserloginGuard]
     // /season/{{m.season_number}}/episode/{{m.episode_number}}
   },

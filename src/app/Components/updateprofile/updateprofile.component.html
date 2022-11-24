@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="container">
+    <form [formGroup]="userForm" class="loginForm">
+        <div>
+            <input type='text' formControlName="userId" [(ngModel)]="this.id">
+            <p class="error-msg" *ngIf="userForm.controls['userId'].dirty && userForm.hasError('required','userId')">
+                *Name
+                Required</p>
+        </div>
+        <div>
+            <input type='text' formControlName="name" class="inputField" [(ngModel)]="signUpData.name">
+            <p class="error-msg" *ngIf="userForm.controls['name'].dirty && userForm.hasError('required','name')">
+                *Name
+                Required</p>
+        </div>
+        <div>
+
+            <input type='text' class="inputField" formControlName="email" [(ngModel)]="signUpData.email"
+                placeholder="Enter Password">
+            <p class="error-msg" *ngIf="userForm.controls['email'].dirty && userForm.hasError('required','email')">
+                *Email
+                Required</p>
+
+        </div>
+        <div>
+
+            <input type='text' class="inputField" formControlName="password" [(ngModel)]="signUpData.password">
+            <p class="error-msg"
+                *ngIf="userForm.controls['password'].dirty && userForm.hasError('required','password')">
+                *Password
+                Required</p>
+
+        </div>
+        <div>
+            <button [disabled]="!userForm.valid" type="submit" (click)="onClickUpdateBtn()">update
+            </button>
+
+        </div>
+
+    </form>
+</div>

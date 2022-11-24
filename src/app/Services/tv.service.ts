@@ -54,9 +54,9 @@ export class TvService {
   }
 
   getEpisodeById(tvid: any, seasonnumber: any, episodeNumber: any): Observable<Tvshows> {
-    alert(tvid);
-    alert(seasonnumber)
-    alert(episodeNumber)
+    // alert(tvid);
+    // alert(seasonnumber)
+    // alert(episodeNumber)
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/${tvid}/season/${seasonnumber}/episode/${episodeNumber}?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
     // https://api.themoviedb.org/3/tv/1402/season/1/episode/2?api_key=285bb9715cde096a3fbb2cfdac23701f&language=en-US
   }
@@ -78,7 +78,7 @@ export class TvService {
   }
 
   getVideobyId(id: any): Observable<Tvshows> {
-    alert(id);
+    // alert(id);
     return this.http.get<Tvshows>(`https://api.themoviedb.org/3/tv/157336?api_key=285bb9715cde096a3fbb2cfdac23701f&append_to_response=videos,images`);
 
   }
