@@ -30,6 +30,9 @@ export class ProfileComponent implements OnInit {
 
   }
 
+
+
+
   onProfile() {
     this.auth.getprofile().subscribe(res => {
       if (res.success) {

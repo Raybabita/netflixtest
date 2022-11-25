@@ -28,11 +28,19 @@ export class AuthService {
   }
 
   updateProfile(id: any, data: any): Observable<any> {
+    // alert(id)
     let headers = {
       'Authorization': "Bearer " + localStorage.getItem('token')
     }
-    return this.http.put(`http://localhost:5000/auth/${id}`, data);
+    return this.http.put(`http://localhost:5000/auth/${id}`, data, { headers: headers });
   }
+
+  // profilePicPost() {
+  //   let headers = {
+  //     'Authorization': "Bearer " + localStorage.getItem('token')
+  //   }
+  //   return this.http.post(`http://localhost:5000/auth/upload`, { headers: headers });
+  // }
 
   setter(data: any) {
     console.log("from setter", data)

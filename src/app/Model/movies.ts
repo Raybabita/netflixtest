@@ -35,7 +35,8 @@ export interface SignUp {
     name: string,
     password: string,
     email: string
-    userId: string
+    userId: string,
+    imagePath: string;
 }
 export interface login {
     userId: string,

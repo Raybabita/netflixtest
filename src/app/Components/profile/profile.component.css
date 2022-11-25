@@ -2,5 +2,38 @@
     padding-top: 200px;
     background-color: #1d1d1d;
     color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     min-height: 100vh;
+}
+
+.profileContainers {
+    padding: 40px;
+    border-radius: 8px;
+    background-color: gray;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.logoutBtn {
+    height: 40px;
+    margin-left: 5px;
+    padding: 10px;
+    background-color: aliceblue;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #008CBA;
+    cursor: pointer;
+    font-weight: 100;
+    border-radius: 4px;
+}
+
+.horizontalLine {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.5px solid black;
+    min-width: 100%;
 }

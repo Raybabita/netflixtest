@@ -15,12 +15,13 @@ export class UpdateprofileComponent implements OnInit {
   isProcess!: false;
   message!: string;
   id: any;
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private activatedRoute: ActivatedRoute) {
+
+  constructor(private formBuilder: FormBuilder, private auth: AuthService, private activatedRoute: ActivatedRoute, private route: Router) {
     this.userForm = this.formBuilder.group({
       'userId': ['', Validators.required],
       'name': ['', Validators.required],
       'email': ['', Validators.required],
-      'password': ['', Validators.required]
+      // 'password': ['', Validators.required]
     })
   }
 
@@ -34,11 +35,35 @@ export class UpdateprofileComponent implements OnInit {
     console.log("from updated form getter", this.signUpData)
   }
 
-  onClickUpdateBtn() {
-    this.auth.updateProfile(this.id, this.userForm).subscribe(req => {
-      console.log("updated data", req)
-    })
-  }
 
+
+
+  onClickUpdateBtn() {
+    // const data = this.userForm.value;
+    const data = {
+      userId: this.userForm.value.userId,
+      name: this.userForm.value.name,
+      email: this.userForm.value.email
+    };
+
+    // delete data['confirm']
+    this.auth.updateProfile(this.id, data).subscribe(res => {
+      // alert("user updated successfull")
+      if (res.success) {
+        this.isProcess = false;
+        this.message = res.message;
+      } else {
+        this.isProcess = false;
+        this.message = res.message;
+      }
+      this.userForm.reset();
+      this.route.navigate(['/profile'])
+    }, err => {
+      alert(err.message);
+      console.log(JSON.stringify(data))
+      this.isProcess = false;
+      this.message = "server error at updatig";
+    });
+  }
 
 }

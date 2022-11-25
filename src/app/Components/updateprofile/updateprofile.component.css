@@ -1,3 +1,56 @@
 .container {
-    padding: 100px;
+    padding-top: 200px;
+    background-color: #1d1d1d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.formContainer {
+    display: flex;
+    padding: 40px;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+.profileimg {
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.inputField {
+    color: blue;
+    height: 45px;
+    margin-bottom: 10px;
+    min-width: 350px;
+    font-size: 18px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    max-width: 450px;
+    border-radius: 5px;
+}
+
+.updatetBtn {
+    height: 40px;
+    margin-left: 5px;
+    padding: 10px;
+    background-color: aliceblue;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #008CBA;
+    cursor: pointer;
+    font-weight: 100;
+    border-radius: 4px;
+}
+
+.horizontalLine {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.5px solid black;
+    min-width: 100%;
 }

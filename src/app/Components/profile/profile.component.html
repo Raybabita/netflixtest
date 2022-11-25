@@ -1,12 +1,14 @@
 <app-header></app-header>
 <div class="container">
-    <div>
-        <h1>id:{{data?._id}}</h1>
-        <h1>Hello {{data?.name}}</h1>
+    <div class="profileContainers">
+
+        <h1>Id:{{data?._id }}</h1>
+        <h1>Hello, {{data?.name | titlecase}}</h1>
         <h1> Email: {{data?.email}}</h1>
-        <button (click)="logout()">logout</button> <button (click)="onupdate(data)"
-            routerLink="update/{{data?._id}}">update
-            profile</button>
+        <hr class="horizontalLine" />
+        <button (click)="logout()" class="logoutBtn">Logout</button> <button class="logoutBtn" (click)="onupdate(data)"
+            routerLink="update/{{data?._id}}">Update
+            Profile</button>
     </div>
 
 </div>
