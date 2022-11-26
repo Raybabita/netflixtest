@@ -35,6 +35,15 @@ export class AuthService {
     return this.http.put(`http://localhost:5000/auth/${id}`, data, { headers: headers });
   }
 
+  postProfile(data: any): Observable<any> {
+    let headers = {
+      'Authorization': "Bearer " + localStorage.getItem('token')
+    }
+    return this.http.post(`http://localhost:5000/auth/upload`, data, { headers: headers });
+
+  }
+
+
   // profilePicPost() {
   //   let headers = {
   //     'Authorization': "Bearer " + localStorage.getItem('token')
